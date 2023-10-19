@@ -3,6 +3,11 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
+
 @app.get("/users/me")
 async def read_user_me():
     return {"user_id": "the current user"}
